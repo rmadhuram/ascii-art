@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <string.h>
-#include <unistd.h>
+#include <math.h>
 
-const int WIDTH = 60;
+const int WIDTH = 80;
 const int HEIGHT = 20;
 
 // frame buffer
@@ -19,10 +19,12 @@ void render() {
 }
 
 int main() {
-  int i = 0;
-  while (1) {
-    memset(fb, (i++  % 32) + 65, WIDTH * HEIGHT);
-    render();
-    usleep(250*1000);
+  memset(fb, ' ', WIDTH * HEIGHT);
+
+  for (int i = 0; i < WIDTH; i++) {
+    int y = 10 - (int) 8 * sin(i * 5 * 0.0174533 );
+    fb[y][i] = '*';
   }
+
+  render();
 }
