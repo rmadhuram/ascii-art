@@ -14,8 +14,8 @@ void drawFrame(t) {
     int y = 10 - (int) 8 * sin((i * 5 + t) * 0.0174533 );
     fb[y][i] = '*';
 
-    y = 10 - (int) 8 * cos((i * 8 + t) * 0.0174533 );
-    fb[y][i] = '0';
+    y = 10 - (int) 9 * cos((i * 8 + t) * 0.0174533 );
+    fb[y][i] = '.';
   }
 }
 
