@@ -22,11 +22,11 @@ int drawFrame(t) {
       /* count the neighbors */
       for (int p = -1; p<=1; p++) {
         for (int q = -1; q <=1; q++) {
-          int x = i+p;
-          int y = j+q;
-          if (x>=0 && x<HEIGHT && y>=0 && y<WIDTH) {
+          int x = j+q;
+          int y = i+p;
+          if (x>=0 && x<WIDTH && y>=0 && y<HEIGHT) {
             if (p != 0 || q != 0 ) {
-              if (fb[x][y] == '*') {
+              if (fb[y][x] == '*') {
                 neighbors ++;
               }
             }
